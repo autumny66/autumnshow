@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原创内容版权监测 - AI 智媒平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">AI</div>
+        AI 智媒平台
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">首页</a>
+        <a href="news-qa.html">智能问答</a>
+        <a href="copyright.html" class="active">版权监测</a>
+        <a href="opinion.html">舆情分析</a>
+        <a href="influence.html">影响力考核</a>
+        <a href="translation.html">智能翻译</a>
+        <a href="proofreading.html">智能审校</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">首页</a> / 原创内容版权监测</div>
+      <h1>原创内容版权监测系统</h1>
+      <p>全网追踪记者原创作品引用与盗用情况，AI 驱动的智能版权保护平台</p>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">原创文章总数</div>
+        <div class="stat-value" style="color:var(--primary)">1,286</div>
+        <div class="stat-change up">&#x2191; 较上月 +128 篇</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">被引用次数</div>
+        <div class="stat-value" style="color:var(--success)">3,542</div>
+        <div class="stat-change up">&#x2191; 较上月 +18%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">疑似盗用</div>
+        <div class="stat-value" style="color:var(--danger)">47</div>
+        <div class="stat-change down">&#x2193; 较上月 -12%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">版权保护率</div>
+        <div class="stat-value" style="color:var(--success)">96.3%</div>
+        <div class="stat-change up">&#x2191; 较上月 +1.2%</div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <div class="table-toolbar">
+        <h3>原创文章监测列表</h3>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="normal">正常</button>
+          <button class="filter-btn" data-filter="cited">已引用</button>
+          <button class="filter-btn" data-filter="suspect">疑似盗用</button>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>文章标题</th>
+            <th>记者</th>
+            <th>发布日期</th>
+            <th>引用数</th>
+            <th>疑似盗用</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="articleTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">文章详情</h3>
+        <button class="modal-close" id="modalClose">&#x2715;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>AI 智媒平台 &copy; 2026 &mdash; 技术演示 Demo，仅供展示用途</p>
+  </footer>
+  <script src="js/copyright.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原创内容影响力考核 - AI 智媒平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">AI</div>
+        AI 智媒平台
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">首页</a>
+        <a href="news-qa.html">智能问答</a>
+        <a href="copyright.html">版权监测</a>
+        <a href="opinion.html">舆情分析</a>
+        <a href="influence.html" class="active">影响力考核</a>
+        <a href="translation.html">智能翻译</a>
+        <a href="proofreading.html">智能审校</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">首页</a> / 原创内容影响力考核</div>
+      <h1>原创内容影响力考核系统</h1>
+      <p>基于媒体等级权重与引用传播数据，科学量化评估每篇原创内容的影响力</p>
+    </div>
+  </div>
+
+  <div class="dashboard">
+
+    <!-- Stats -->
+    <div class="stats-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat-card">
+        <div class="stat-label">考核文章总数</div>
+        <div class="stat-value" style="color:var(--primary)">1,286</div>
+        <div class="stat-change up">&#x2191; 本月新增 128 篇</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">平均影响力指数</div>
+        <div class="stat-value" style="color:var(--success)">73.6</div>
+        <div class="stat-change up">&#x2191; 较上月 +5.2</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">S/A级媒体引用</div>
+        <div class="stat-value" style="color:var(--purple)">892</div>
+        <div class="stat-change up">&#x2191; 较上月 +23%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">影响力&ge;90 文章占比</div>
+        <div class="stat-value" style="color:var(--accent)">18.4%</div>
+        <div class="stat-change up">&#x2191; 较上月 +2.1%</div>
+      </div>
+    </div>
+
+    <!-- Media Tier Legend -->
+    <div class="tier-legend-card">
+      <h3 style="font-size:0.95rem;margin-bottom:12px">&#x1F3C6; 媒体等级与考核系数</h3>
+      <div class="tier-grid">
+        <div class="tier-item tier-s">
+          <div class="tier-badge">S 级</div>
+          <div class="tier-info">
+            <div class="tier-name">中央级/国家级媒体</div>
+            <div class="tier-examples">新华社、人民日报、央视新闻、光明日报</div>
+          </div>
+          <div class="tier-coeff">系数 &times;3.0</div>
+        </div>
+        <div class="tier-item tier-a">
+          <div class="tier-badge">A 级</div>
+          <div class="tier-info">
+            <div class="tier-name">省级重点/主流财经媒体</div>
+            <div class="tier-examples">澎湃新闻、经济日报、第一财经、南方周末</div>
+          </div>
+          <div class="tier-coeff">系数 &times;2.0</div>
+        </div>
+        <div class="tier-item tier-b">
+          <div class="tier-badge">B 级</div>
+          <div class="tier-info">
+            <div class="tier-name">地市级媒体/垂直行业媒体</div>
+            <div class="tier-examples">各省市日报、行业专业媒体、地方电视台</div>
+          </div>
+          <div class="tier-coeff">系数 &times;1.2</div>
+        </div>
+        <div class="tier-item tier-c">
+          <div class="tier-badge">C 级</div>
+          <div class="tier-info">
+            <div class="tier-name">自媒体/网络平台/其他</div>
+            <div class="tier-examples">微信公众号、头条号、地方资讯站</div>
+          </div>
+          <div class="tier-coeff">系数 &times;0.5</div>
+        </div>
+      </div>
+      <div class="formula-box">
+        <div class="formula-title">&#x1F4D0; 影响力评分公式</div>
+        <div class="formula-text">影响力指数 = &sum;(媒体等级系数 &times; 引用次数) &times; 时效系数 &times; 独家加成 &times; 传播深度系数</div>
+        <div class="formula-desc">其中时效系数随发布时间衰减（30天内&times;1.0，30-90天&times;0.8，90天以上&times;0.6）；独家报道加成 &times;1.3；传播深度根据二跳引用量计算</div>
+      </div>
+    </div>
+
+    <!-- Ranking Table -->
+    <div class="table-container">
+      <div class="table-toolbar">
+        <h3>&#x1F4CA; 原创内容影响力排行榜</h3>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="90">影响力&ge;90</button>
+          <button class="filter-btn" data-filter="70">影响力 70-89</button>
+          <button class="filter-btn" data-filter="low">影响力&lt;70</button>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width:50px">排名</th>
+            <th>文章标题</th>
+            <th>记者</th>
+            <th>发布日期</th>
+            <th>S/A级引用</th>
+            <th>总引用</th>
+            <th>影响力指数</th>
+            <th>等级</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="rankTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Journalist Leaderboard -->
+    <div class="table-container" style="margin-top:20px">
+      <div class="table-toolbar">
+        <h3>&#x1F451; 记者影响力排行榜</h3>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width:50px">排名</th>
+            <th>记者</th>
+            <th>原创篇数</th>
+            <th>总引用数</th>
+            <th>平均影响力</th>
+            <th>S/A级引用占比</th>
+            <th>综合评分</th>
+          </tr>
+        </thead>
+        <tbody id="journalistTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" style="max-width:880px">
+      <div class="modal-header">
+        <h3 id="modalTitle">影响力详情</h3>
+        <button class="modal-close" id="modalClose">&#x2715;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>AI 智媒平台 &copy; 2026 &mdash; 技术演示 Demo，仅供展示用途</p>
+  </footer>
+  <script src="js/influence.js"></script>
+</body>
+</html>

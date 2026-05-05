@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能审校系统 - AI 智媒平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">AI</div>
+        AI 智媒平台
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">首页</a>
+        <a href="news-qa.html">智能问答</a>
+        <a href="copyright.html">版权监测</a>
+        <a href="opinion.html">舆情分析</a>
+        <a href="influence.html">影响力考核</a>
+        <a href="translation.html">智能翻译</a>
+        <a href="proofreading.html" class="active">智能审校</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">首页</a> / 智能审校系统</div>
+      <h1>AI 智能审校系统</h1>
+      <p>应用出版政策法规、行业规范与法律规定，对原创内容进行全方位智能审核与校对</p>
+    </div>
+  </div>
+
+  <div class="workflow-bar" id="workflowBar"></div>
+
+  <div class="proofreading-layout">
+
+    <!-- Left: Original Content -->
+    <div class="proof-col">
+      <div class="proof-col-header">
+        <h3>&#x1F4C4; 原始稿件</h3>
+        <span style="font-size:0.8rem;color:var(--text-secondary);">点击标红文字查看审校意见</span>
+      </div>
+      <div class="proof-col-body" id="articleBody">
+        <div class="proof-article-title">关于推进我市数字经济高质量发展的调研报告</div>
+        <div class="proof-article-meta">
+          作者：张明远　|　来源：市发展研究中心　|　拟刊载期刊：《城市经济观察》2026年第4期
+        </div>
+        <div class="proof-article-body">
+          <p>近年来，我市数字经济呈现蓬勃发展态势。据市统计局数据显示，2025年全市数字经济核心产业增加值达到1,850亿元，占GDP比重提升至38.6%，增速位居全省前列。</p>
+          <p>在调研过程中，<span class="hl-error" data-id="1">据某军工集团内部人士透露</span>，我市在量子通信和人工智能芯片领域已取得重要突破。相关技术成果有望在国防和民用领域实现广泛应用。</p>
+          <p>值得关注的是，<span class="hl-error" data-id="2">台湾当局对此高度关注</span>，多次通过非正式渠道了解我市数字产业发展动态。对此，我市相关部门保持高度警惕，坚决维护国家主权和领土完整。</p>
+          <p>从企业层面来看，<span class="hl-warning" data-id="3">该企业在行业中排名第一</span>，其自主研发的云计算平台已服务超过5,000家政企客户。<span class="hl-suggestion" data-id="4">三、五年后</span>，预计全市数字经济规模将突破5,000亿元大关。</p>
+          <p>在农业数字化方面，我市智慧农业试点成效显著。以某县为例，通过引入物联网技术，<span class="hl-warning" data-id="5">亩产达到了1500斤</span>，较传统种植模式提升近40%。</p>
+          <p><span class="hl-warning" data-id="6">据不完全统计，约80%的企业都表示支持</span>市政府出台的数字经济扶持政策。多数受访企业家认为，政策红利将持续释放，为全市经济转型升级注入强劲动力。</p>
+          <p>综上所述，我市数字经济发展前景广阔，建议进一步加大政策扶持力度，推动产业集聚发展，力争在<span class="hl-error" data-id="7">"十三五"期间</span>建成<span class="hl-error" data-id="8">国家级数字经济示范区</span>。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Review Comments -->
+    <div class="proof-col">
+      <div class="proof-col-header">
+        <h3>&#x1F50E; 审校意见</h3>
+        <span style="font-size:0.8rem;color:var(--text-secondary);">点击意见定位原文位置</span>
+      </div>
+      <div class="proof-col-body" id="reviewBody">
+        <div class="proof-summary">
+          <div class="proof-summary-item error">
+            <div class="count">3</div>
+            <div class="label">错误</div>
+          </div>
+          <div class="proof-summary-item warning">
+            <div class="count">3</div>
+            <div class="label">警告</div>
+          </div>
+          <div class="proof-summary-item suggestion">
+            <div class="count">1</div>
+            <div class="label">建议</div>
+          </div>
+        </div>
+        <div class="stage-filter" id="stageFilter"></div>
+        <div class="review-list" id="reviewList">
+          <!-- 由 JS 动态渲染 -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>AI 智媒平台 &copy; 2026 &mdash; 技术演示 Demo，仅供展示用途</p>
+  </footer>
+
+  <script src="js/proofreading.js"></script>
+</body>
+</html>

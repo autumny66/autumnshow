@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能翻译系统 - AI 智媒平台</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="logo-icon">AI</div>
+        AI 智媒平台
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">首页</a>
+        <a href="news-qa.html">智能问答</a>
+        <a href="copyright.html">版权监测</a>
+        <a href="opinion.html">舆情分析</a>
+        <a href="influence.html">影响力考核</a>
+        <a href="translation.html" class="active">智能翻译</a>
+        <a href="proofreading.html">智能审校</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">首页</a> / 智能翻译系统</div>
+      <h1>智能翻译系统</h1>
+      <p>基于华为昇腾算力底座，为传媒行业提供多语种、多场景的智能翻译服务</p>
+    </div>
+  </div>
+
+  <div class="tl-layout">
+
+    <!-- Architecture Diagram -->
+    <div class="tl-section">
+      <div class="tl-section-header">
+        <h3>&#x1F3D7; 系统架构</h3>
+        <div class="tl-arch-legend">
+          <span><span class="tl-arch-dot" style="background:#dc2626"></span>硬件底座</span>
+          <span><span class="tl-arch-dot" style="background:#2563eb"></span>使能平台</span>
+          <span><span class="tl-arch-dot" style="background:#059669"></span>应用层</span>
+        </div>
+      </div>
+      <div class="tl-arch-container" id="archDiagram">
+        <!-- Built by JS -->
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="tl-stats-row">
+      <div class="tl-stat-card">
+        <div class="tl-stat-icon" style="background:#fef2f2;color:#dc2626">&#x1F3AF;</div>
+        <div class="tl-stat-num">98.2%</div>
+        <div class="tl-stat-label">翻译准确率</div>
+      </div>
+      <div class="tl-stat-card">
+        <div class="tl-stat-icon" style="background:#eff6ff;color:#2563eb">&#x1F310;</div>
+        <div class="tl-stat-num">17</div>
+        <div class="tl-stat-label">支持语种</div>
+      </div>
+      <div class="tl-stat-card">
+        <div class="tl-stat-icon" style="background:#f0fdf4;color:#059669">&#x26A1;</div>
+        <div class="tl-stat-num">&lt;200ms</div>
+        <div class="tl-stat-label">实时翻译延迟</div>
+      </div>
+      <div class="tl-stat-card">
+        <div class="tl-stat-icon" style="background:#fefce8;color:#ca8a04">&#x1F4E1;</div>
+        <div class="tl-stat-num">双模</div>
+        <div class="tl-stat-label">在线 / 离线</div>
+      </div>
+    </div>
+
+    <!-- Translation Demo -->
+    <div class="tl-section">
+      <div class="tl-section-header">
+        <h3>&#x1F4AC; 翻译体验演示</h3>
+      </div>
+      <div class="tl-demo-container">
+        <div class="tl-demo-controls">
+          <div class="tl-lang-select">
+            <select id="srcLang">
+              <option value="zh">中文</option>
+              <option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="es">Español</option>
+              <option value="ru">Русский</option>
+              <option value="ar">العربية</option>
+            </select>
+            <button class="tl-swap-btn" id="swapBtn">&#x21C4;</button>
+            <select id="tgtLang">
+              <option value="en">English</option>
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="es">Español</option>
+              <option value="ru">Русский</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+          <div class="tl-mode-btns">
+            <button class="tl-mode-btn active" data-mode="online">&#x1F310; 在线翻译</button>
+            <button class="tl-mode-btn" data-mode="offline">&#x1F4E6; 离线翻译</button>
+          </div>
+        </div>
+        <div class="tl-demo-boxes">
+          <div class="tl-demo-box">
+            <div class="tl-demo-box-label">原文输入</div>
+            <textarea id="srcText" rows="5" placeholder="请输入要翻译的文本...">华为昇腾AI芯片为智能翻译提供强大的算力支撑，实现毫秒级实时翻译。</textarea>
+          </div>
+          <div class="tl-demo-box">
+            <div class="tl-demo-box-label">翻译结果 <span id="transIndicator" class="tl-trans-status">在线实时翻译</span></div>
+            <div class="tl-demo-output" id="tgtText"></div>
+          </div>
+        </div>
+        <div class="tl-demo-actions">
+          <button class="tl-translate-btn" id="translateBtn">&#x1F4AC; 立即翻译</button>
+          <span class="tl-demo-hint" id="transTime"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scenarios -->
+    <div class="tl-section">
+      <div class="tl-section-header">
+        <h3>&#x1F3AC; 应用场景</h3>
+      </div>
+      <div class="tl-scenario-grid">
+        <div class="tl-scenario-card">
+          <div class="tl-scenario-icon" style="background:linear-gradient(135deg,#eff6ff,#dbeafe)">&#x1F4F9;</div>
+          <h4>短视频翻译</h4>
+          <p>支持抖音、快手等短视频平台内容的实时字幕翻译。AI 自动识别语音，生成多语种字幕，支持字体样式自定义，助力内容出海。</p>
+          <div class="tl-scenario-tags">
+            <span>语音识别</span><span>字幕生成</span><span>多语种叠加</span>
+          </div>
+        </div>
+        <div class="tl-scenario-card">
+          <div class="tl-scenario-icon" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">&#x1F4D6;</div>
+          <h4>漫剧翻译</h4>
+          <p>针对漫画和动漫内容的智能翻译引擎。自动识别气泡文字区域，支持竖排/横排文字替换，保持原版排版的视觉完整性。</p>
+          <div class="tl-scenario-tags">
+            <span>OCR识别</span><span>文字区域定位</span><span>排版还原</span>
+          </div>
+        </div>
+        <div class="tl-scenario-card">
+          <div class="tl-scenario-icon" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">&#x1F4FA;</div>
+          <h4>电视直播翻译</h4>
+          <p>为新闻直播、国际会议、体育赛事提供实时同传翻译。支持多路音轨并行处理，生成实时字幕流，延迟低于200ms。</p>
+          <div class="tl-scenario-tags">
+            <span>实时同传</span><span>多路音轨</span><span>字幕流输出</span>
+          </div>
+        </div>
+        <div class="tl-scenario-card">
+          <div class="tl-scenario-icon" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe)">&#x1F4F0;</div>
+          <h4>新闻稿件翻译</h4>
+          <p>面向新闻编辑部的批量稿件翻译工具。支持新闻专业术语库定制，保持新闻语言风格一致性，日均处理能力超过10万字。</p>
+          <div class="tl-scenario-tags">
+            <span>术语定制</span><span>风格一致</span><span>批量处理</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supported Languages -->
+    <div class="tl-section">
+      <div class="tl-section-header">
+        <h3>&#x1F5FA; 支持语种（17种）</h3>
+      </div>
+      <div class="tl-lang-grid" id="langGrid">
+        <!-- Built by JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>AI 智媒平台 &copy; 2026 &mdash; 技术演示 Demo，仅供展示用途</p>
+  </footer>
+  <script src="js/translation.js"></script>
+</body>
+</html>
